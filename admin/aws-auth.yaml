@@ -1,0 +1,18 @@
+apiVersion: v1
+data:
+  mapRoles: |
+    - groups:
+      - system:bootstrappers
+      - system:nodes
+      rolearn: arn:aws:iam::647940095594:role/eksctl-roboshop-nodegroup-spot-NodeInstanceRole-hduKNXymLe7C
+      username: system:node:{{EC2PrivateDNSName}}
+  mapUsers: |
+    - groups:
+      - roboshop-pod-reader
+      userarn: arn:aws:iam::647940095594:user/satheesh
+      username: satheesh
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: kube-system
+  uid: 79762c15-3163-4ad1-b476-78017b26866c
