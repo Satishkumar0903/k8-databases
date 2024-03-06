@@ -1,5 +1,7 @@
-deployment:
-  replicas: 1
-  imageVersion: v1
-hpa:
-  averageUtilization: 70
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: user
+  namespace: roboshop
+data:
+  MONGO: "true"
